@@ -46,7 +46,7 @@ class HomePage(HeroMixin, ReviewDateMixin, Page):
         ('grey_panel', GreyPanelBlock()),
         ('warning_callout', WarningCalloutBlock()),
         ('summary_list', SummaryListBlock()),
-    ])
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + HeroMixin.content_panels + [
         FieldPanel('body'),
@@ -70,7 +70,7 @@ class HubsPage(Page):
     body = StreamField([
         ('promo', PromoBlock()),
         ('promo_group', PromoGroupBlock()),
-    ])
+    ], use_json_field=True)
     content_panels = Page.content_panels + [
         FieldPanel('body'),
     ]

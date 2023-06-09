@@ -7,12 +7,12 @@ from wagtail.admin.panels import (
     MultiFieldPanel,
     PageChooserPanel,
 )
-from wagtail.contrib.settings.models import BaseSetting, register_setting
+from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.models import Orderable
 
 
 @register_setting
-class HeaderSettings(ClusterableModel, BaseSetting):
+class HeaderSettings(ClusterableModel, BaseSiteSetting):
     service_name = models.CharField(max_length=255, blank=True)
     service_long_name = models.BooleanField(default=False)
     service_link = models.ForeignKey(
@@ -78,7 +78,7 @@ class NavigationLink(Orderable):
 
 
 @register_setting
-class FooterSettings(ClusterableModel, BaseSetting):
+class FooterSettings(ClusterableModel, BaseSiteSetting):
 
     fixed_coloumn_footer = models.BooleanField(
         default=False,
