@@ -1,4 +1,4 @@
-from wagtail.admin.panels import StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.models import Page
 from wagtail.fields import StreamField
 
@@ -49,7 +49,7 @@ class HomePage(HeroMixin, ReviewDateMixin, Page):
     ])
 
     content_panels = Page.content_panels + HeroMixin.content_panels + [
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     settings_panels = Page.settings_panels + ReviewDateMixin.settings_panels
@@ -72,5 +72,5 @@ class HubsPage(Page):
         ('promo_group', PromoGroupBlock()),
     ])
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
