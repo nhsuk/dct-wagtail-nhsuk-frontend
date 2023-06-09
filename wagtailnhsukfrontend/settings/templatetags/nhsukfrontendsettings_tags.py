@@ -1,5 +1,5 @@
 from django import template
-from wagtail.core.models import Site
+from wagtail.models import Site
 from wagtailnhsukfrontend.settings.models import HeaderSettings, FooterSettings
 
 register = template.Library()
